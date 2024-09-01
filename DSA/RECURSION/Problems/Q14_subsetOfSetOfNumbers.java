@@ -3,8 +3,7 @@ package DSA.RECURSION.Problems;
 import java.util.ArrayList;
 
 public class Q14_subsetOfSetOfNumbers {
-
-    
+//O((2)^n)
     // Static counter to keep track of subset index
     private static int subsetIndex = 0;
     
