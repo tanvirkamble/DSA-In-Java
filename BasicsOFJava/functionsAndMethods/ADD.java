@@ -1,3 +1,4 @@
+package BasicsOFJava.functionsAndMethods;
  // make a function to add 2 no.s and reutrn the sm
 import java.util.*;
 

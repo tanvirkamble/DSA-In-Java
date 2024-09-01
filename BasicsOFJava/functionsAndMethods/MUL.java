@@ -1,3 +1,4 @@
+package BasicsOFJava.functionsAndMethods;
 import java.util.*;
 
 public class MUL {

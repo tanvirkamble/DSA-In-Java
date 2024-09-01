@@ -1,3 +1,4 @@
+package BasicsOFJava.STRINGS;
 
 // Compare 2 strings
 

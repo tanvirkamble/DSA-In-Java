@@ -1,4 +1,4 @@
-package problems;
+package BasicsOFJava.functionsAndMethods.problems;
 import java.util.*;
 
 public class Q3 {

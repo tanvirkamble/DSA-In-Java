@@ -1,3 +1,4 @@
+package BasicsOFJava.STRINGS;
 // ParseInt Method of Integer class
 
 public class string4 {

@@ -1,3 +1,4 @@
+package BasicsOFJava.STRINGS;
 
 public class string6 {
     public static void main(String args[]) {

@@ -1,5 +1,5 @@
 // Write a function that calculates the Greatest Common Divisor of 2 numbers. (BONUS)
-package problems;
+package BasicsOFJava.functionsAndMethods.problems;
 import java.util.*;
 
 public class Q9 {

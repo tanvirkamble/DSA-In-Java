@@ -1,3 +1,4 @@
+package BasicsOFJava.STRINGS;
 // ToString Method of String class
 
 public class string5 {

@@ -1,3 +1,5 @@
+package BasicsOFJava.ARRAYS;
+
 import java.util.*;
 
 public class array2 {
