@@ -10,7 +10,7 @@ public class Q12_placeTiles {
            return 1;            
         }
         
-        int verticalPlacements = countOfPlacements(-m, m);
+        int verticalPlacements = countOfPlacements(n-m, m);
         int horizontalPlacements = countOfPlacements(n-1, verticalPlacements) ;
 
         return verticalPlacements+horizontalPlacements;
