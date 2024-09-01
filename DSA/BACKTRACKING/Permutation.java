@@ -1,6 +1,6 @@
 package DSA.BACKTRACKING;
 
-public class Recursion {
+public class Permutation {
 //O(n! * n)  => n1 is total combination and muultiply by n denotes the time to reach a single combination.
     private static int permutationCount = 0;
 
