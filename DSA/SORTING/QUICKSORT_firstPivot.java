@@ -1,18 +1,20 @@
 package DSA.SORTING;
 
-public class QUICKSORT {
+public class QUICKSORT_firstPivot {
 
     // Partition function to place the pivot element in its correct position
     public static int partition(int arr[], int low, int high) {
-        int pivot = arr[high];  // Choosing the last element as the pivot
-        int i = low - 1;  // Pointer for the greater element
-        
-        System.out.println("Partitioning with pivot: " + pivot + " at index: " + high);
+        int pivot = arr[low];  // Choosing the first element as the pivot
+        int i = low;  // Start index of the first element
+
+        System.out.println("Partitioning with pivot: " + pivot + " at index: " + low);
 
         // Traverse each element of the array and compare it with the pivot
-        for (int j = low; j < high; j++) {
+        for (int j = low + 1; j <= high; j++) {
             if (arr[j] <= pivot) {
-                i++;  // If element smaller than pivot is found, swap it with the greater element pointed by i
+                i++;  // Increment index of smaller element
+
+                // Swap elements at i and j
                 int temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
@@ -20,21 +22,21 @@ public class QUICKSORT {
             }
         }
 
-        // Swap the pivot element with the greater element specified by i
-        i++;
+        // Swap the pivot element with the element at index i
         int temp = arr[i];
-        arr[i] = arr[high];
-        arr[high] = temp;
+        arr[i] = arr[low];
+        arr[low] = temp;
 
-        System.out.println("Swapped pivot: " + arr[i] + " with " + arr[high]);
-        // Return the position from where partition is done
+        System.out.println("Swapped pivot: " + arr[i] + " with " + arr[low]);
+
+        // Return the pivot index after partition
         return i;
     }
 
     // Function to perform quicksort
     public static void quicksort(int arr[], int low, int high) {
         if (low < high) {
-            // Find pivot element such that elements lower than pivot are on the left, and elements greater than pivot are on the right
+            // Find the pivot element such that elements lower than pivot are on the left, and elements greater than pivot are on the right
             int pivot = partition(arr, low, high);
             System.out.println("Pivot at index: " + pivot);
 
