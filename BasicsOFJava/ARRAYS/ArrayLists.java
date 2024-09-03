@@ -7,9 +7,9 @@ public class ArrayLists {
         
         // types of arraylist Integer | Float | Boolean | String
         ArrayList<Integer> list1 = new ArrayList<>();
-        ArrayList<Boolean> list2 = new ArrayList<>();
+        /*ArrayList<Boolean> list2 = new ArrayList<>();
         ArrayList<Float> list3 = new ArrayList<>();
-        ArrayList<String> list4 = new ArrayList<>();
+        ArrayList<String> list4 = new ArrayList<>();*/
         
         // add elements
         list1.add(0); 
