@@ -11,6 +11,7 @@ public class QUICKSORT_firstPivot {
         System.out.println("Partitioning with pivot: " + pivot + " at index: " + low);
 
         // Traverse each element of the array and compare it with the pivot
+        //low + 1 => as low is the pivot
         for (int j = low + 1; j <= high; j++) {
             if (arr[j] <= pivot) {
                 i++;  // Increment index of smaller element
@@ -48,7 +49,7 @@ public class QUICKSORT_firstPivot {
     }
 
     public static void main(String[] args) {
-        int arr[] = {1, 3, 4, 2, 5, 9};
+        int arr[] = {1, 3, 88, 2, 5, 9};
 
         // Perform quicksort on the array
         quicksort(arr, 0, arr.length - 1);
