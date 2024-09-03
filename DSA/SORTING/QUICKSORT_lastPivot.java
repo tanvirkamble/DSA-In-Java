@@ -1,6 +1,7 @@
 package DSA.SORTING;
 
 public class QUICKSORT_lastPivot {
+//Worst-case: 𝑂(𝑛^2)
 
     // Partition function to place the pivot element in its correct position
     public static int partition(int arr[], int low, int high) {
