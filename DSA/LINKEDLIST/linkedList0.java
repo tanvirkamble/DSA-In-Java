@@ -25,9 +25,10 @@ public class linkedList0{
             public void addFirst(String x){
                 Node newNode = new Node(x);
                 //add the address of current node in the newNode next position linking it to the list
-                newNode.next = head;
+                newNode.next = head; // Link newNode to the current head
+
                 //replpacing the newNOde as head making it intial node hence the first node
-                head = newNode;
+                head = newNode;// Update head to newNode
             }
 
             public void addLast(String x){
