@@ -57,6 +57,38 @@ public class linkedList5 {
 
     }
 
+    public void removeCycle(){
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null){
+            fast=fast.next.next;
+            slow= slow.next;
+            if (slow == fast) {
+                break;
+            }
+        }
+
+        if (fast == null || fast.next == null) {
+            return;
+        }
+
+        //to find start of cycle
+        slow = head;
+        while (slow != fast) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        Node cycleStart = slow;
+        Node cycleNext = cycleStart;
+
+        while (cycleNext != cycleStart) {
+            cycleNext = cycleNext.next;
+        }
+       cycleNext.next = null;
+    }
+
     public static void main(String[] args) {
         linkedList5 list = new linkedList5();
     
@@ -74,6 +106,11 @@ public class linkedList5 {
         boolean hasCycle = list.hasCycle();
         System.out.println("list 1");    
         System.out.println("List has a cycle: " + hasCycle);
+
+        list.removeCycle();
+        list.printList();
+
+
     
         // Test case 2: List with a cycle
         // Reset the list
@@ -100,5 +137,15 @@ public class linkedList5 {
         // Check if the list has a cycle
         hasCycle = list.hasCycle();
         System.out.println("List has a cycle: " + hasCycle);
+
+          // Remove the cycle
+          list.removeCycle();
+
+          // Check again if the list has a cycle
+          hasCycle = list.hasCycle();
+          System.out.println("List has a cycle after removal: " + hasCycle);
+  
+          // Print the list to verify it's no longer cyclic
+          list.printList();
     }
 }
