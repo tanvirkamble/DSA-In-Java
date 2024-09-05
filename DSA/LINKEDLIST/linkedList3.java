@@ -71,7 +71,7 @@ public class linkedList3 {
     }
     
     public int findNodeAndPrint(int x){
-       Node tobePrinted = new Node(x);
+    //    Node tobePrinted = new Node(x);
        if (head == null) {
         System.out.println("List is empty.");
         return -1; 
@@ -90,11 +90,10 @@ public class linkedList3 {
         while ( i < positionFromStart) {
             currNode = currNode.next;
             i++;
-            System.out.println(i);
-            if (currNode == null){
-               System.out.println("at null");
-               return i;
-            }
+            System.out.print("i " +i);
+            System.out.print(" currNode " + currNode.data);
+            System.out.println();
+            
         }
        
         
@@ -113,11 +112,11 @@ public class linkedList3 {
         list.addfirst(64);
         list.printList();
         
-        // list.findNodeAndDelete(3);
-        // list.printList();
-
-        int y = list.findNodeAndPrint(0);
+        
+        int y = list.findNodeAndPrint(4 );
         System.out.println(y);
-
+        
+        list.findNodeAndDelete(3);
+        list.printList();
     }
 }

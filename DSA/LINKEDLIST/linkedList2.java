@@ -68,15 +68,12 @@ public class linkedList2 {
                 return head;
             }
 
-            Node newHead = recursiveReverse(head.next);
+            Node newHead = recursiveReverse(head.next);//till last node
             head.next.next = head;
             head.next = null;
             return newHead;
 
-        }
-
-    
-        
+        }        
         
         public static void main(String[] args) {
             
@@ -111,3 +108,46 @@ public class linkedList2 {
     }
     
 }
+
+
+/**
+ * Reverses the linked list iteratively.
+ * 
+ * This method reverses the linked list by iterating through each node 
+ * and changing the direction of the `next` pointers.
+ * 
+ * Algorithm:
+ * 1. Start with two pointers: `prevNode` (initialized to the head) and `currNode` (initialized to the second node).
+ * 2. Traverse the list while `currNode` is not null:
+ *    - Save the next node (`nextNode`) for future traversal.
+ *    - Reverse the `next` pointer of the current node to point to `prevNode`.
+ *    - Move the `prevNode` and `currNode` pointers one step forward.
+ * 3. After the loop, set the head's `next` to null (as it becomes the last node).
+ * 4. Update the `head` pointer to the new head (`prevNode`).
+ * 
+ * Time Complexity: O(n), where n is the number of nodes in the list.
+ * Space Complexity: O(1), since no extra space is used apart from a few pointers.
+ */
+
+
+/**
+ * Reverses the linked list recursively.
+ * 
+ * This method reverses the linked list by breaking the problem into smaller sub-problems.
+ * Each recursive call processes the remainder of the list after the current node, 
+ * then reverses the link between the current node and the next node.
+ * 
+ * Algorithm:
+ * 1. Base Case: If the list is empty or has only one node, return the current head as it is already reversed.
+ * 2. Recursive Step: Call the function recursively for the next node (`head.next`) to reverse the rest of the list.
+ * 3. Once the recursion starts returning:
+ *    - Reverse the `next` pointer of the next node to point to the current node (`head.next.next = head`).
+ *    - Set the current node's `next` to null to break the original link (`head.next = null`).
+ * 4. Return the `newHead`, which is the last node in the original list and becomes the first node in the reversed list.
+ * 
+ * Time Complexity: O(n), where n is the number of nodes in the list.
+ * Space Complexity: O(n) due to the recursive call stack.
+ * 
+ * @param head The head node of the linked list
+ * @return The new head node of the reversed linked list
+ */
