@@ -49,6 +49,17 @@ class stack1 {
         }
         return head.data;
     }
+    // just to check the reel order of list before poping
+    void printList(){
+        Node currNode = head;
+
+        while (currNode != null) {
+            System.out.print(currNode.data + " -> ");      
+            currNode= currNode.next;      
+        }
+        System.out.println("null");
+        System.out.println();
+    }
     
 
     public static void main (String args[]){
@@ -56,8 +67,7 @@ class stack1 {
           s.push(0);
           s.push(1);
           s.push(2);
-        //  s.printStack(); 
-        //  s.printStack(); 
+         s.printList(); 
         
             while (!s.isempty()) {
                 System.out.println(s.peek());
