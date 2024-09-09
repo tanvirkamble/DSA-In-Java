@@ -1,5 +1,4 @@
-package DSA.SORTING;
-
+package SORTING;
 public class MERGESORT {
 
     public static void conquer(int arr[],int startIdx,int middleIdx ,int endIdx){

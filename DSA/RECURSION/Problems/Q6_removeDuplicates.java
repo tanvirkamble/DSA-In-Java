@@ -1,4 +1,4 @@
-package DSA.RECURSION.Problems;
+package RECURSION.Problems;
 //remove the duplicates
 public class Q6_removeDuplicates {
 // time complexity O(n)  

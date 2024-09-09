@@ -1,4 +1,4 @@
-package DSA.LINKEDLIST;
+package LINKEDLIST;
 //find a node from behind and delete it
 public class linkedList3 {
     //    Constructor

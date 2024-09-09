@@ -1,4 +1,4 @@
-package DSA.RECURSION.Problems;
+package RECURSION.Problems;
 
 public class Q4_isSorted {
 // time complexity O(n)  

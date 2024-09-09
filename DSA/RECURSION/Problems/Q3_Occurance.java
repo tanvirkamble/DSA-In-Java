@@ -1,4 +1,4 @@
-package DSA.RECURSION.Problems;
+package RECURSION.Problems;
 // first time element occurend and last time it occured
 public class Q3_Occurance {
 // time complexity O(n)  

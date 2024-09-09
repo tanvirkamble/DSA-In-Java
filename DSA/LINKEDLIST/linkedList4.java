@@ -1,4 +1,4 @@
-package DSA.LINKEDLIST;
+package LINKEDLIST;
 //palindrome
 public class linkedList4 {
 

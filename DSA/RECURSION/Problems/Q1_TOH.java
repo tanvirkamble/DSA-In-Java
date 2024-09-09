@@ -1,4 +1,4 @@
-package DSA.RECURSION.Problems;
+package RECURSION.Problems;
 // tower of hanoi
 public class Q1_TOH {
     // time complexity O((2)^n-1) ~ O((2)^n)

@@ -1,4 +1,4 @@
-package DSA.LINKEDLIST;
+package LINKEDLIST;
 import java.util.*;
 /*Reverse a Linked List without using extra space.*/
 public class linkedList2 {

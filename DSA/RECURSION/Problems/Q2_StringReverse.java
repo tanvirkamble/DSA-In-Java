@@ -1,4 +1,4 @@
-package DSA.RECURSION.Problems;
+package RECURSION.Problems;
 // abcd => dcba 
 public class Q2_StringReverse {
 // time complexity O(n)  

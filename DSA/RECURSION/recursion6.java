@@ -1,4 +1,4 @@
-package DSA.RECURSION;
+package RECURSION;
 //fibonacci series
 public class recursion6 {
 

@@ -1,4 +1,4 @@
-package DSA.BACKTRACKING;
+package BACKTRACKING;
 
 public class SUDOKU {
 

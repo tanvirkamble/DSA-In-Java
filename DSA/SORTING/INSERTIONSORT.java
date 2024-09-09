@@ -1,4 +1,4 @@
-package DSA.SORTING;
+package SORTING;
 import java.util.*;
 // sort in ascending 1,2,... n
 public class INSERTIONSORT {

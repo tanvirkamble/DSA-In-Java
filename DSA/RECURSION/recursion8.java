@@ -1,4 +1,4 @@
-package DSA.RECURSION;
+package RECURSION;
 // x^n wwhere stack height is logn
 public class recursion8 {
     public static int nPower(int x, int n){

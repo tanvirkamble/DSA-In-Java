@@ -1,4 +1,4 @@
-package DSA.RECURSION;
+package RECURSION;
 //x^n n is stack height
 public class recursion7 {
 

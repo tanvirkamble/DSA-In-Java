@@ -1,4 +1,4 @@
-package DSA.RECURSION.Problems;
+package RECURSION.Problems;
 
 public class Q7_Subsequences { 
 // time complexity O((2)^n)  

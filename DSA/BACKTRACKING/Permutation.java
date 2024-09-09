@@ -1,4 +1,4 @@
-package DSA.BACKTRACKING;
+package BACKTRACKING;
 
 public class Permutation {
 //O(n! * n)  => n! is total combination and muultiply by n denotes the time to reach a single combination.

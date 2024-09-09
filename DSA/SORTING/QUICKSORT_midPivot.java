@@ -1,4 +1,4 @@
-package DSA.SORTING;
+package SORTING;
 
 public class QUICKSORT_midPivot {
 //Worst-case: 𝑂(𝑛^2)

@@ -1,4 +1,4 @@
-package DSA.RECURSION.Problems;
+package RECURSION.Problems;
 
 public class Q9_keypadCombinations {
     // Keypad mapping array where index represents digit and value represents the letters associated with that digit

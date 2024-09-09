@@ -1,4 +1,4 @@
-package DSA.RECURSION;
+package RECURSION;
 // sum = 1 + 2 +3 ... + n
 public class recursion3 {
 

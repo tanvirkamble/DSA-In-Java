@@ -1,4 +1,4 @@
-package DSA.RECURSION.Problems;
+package RECURSION.Problems;
 // move all the elements 'e' to the end of the string
 public class Q5_moveAllxToEnd {
 // time complexity O(n)  

@@ -1,4 +1,4 @@
-package DSA.STACK;
+package STACK;
 
 class stack1 {
     static Node head;

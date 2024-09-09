@@ -1,4 +1,4 @@
-package DSA.RECURSION.Problems;
+package RECURSION.Problems;
 
 public class Q12_placeTiles {
     public static int countOfPlacements(int n,int m){

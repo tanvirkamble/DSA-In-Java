@@ -1,4 +1,4 @@
-package DSA.RECURSION;
+package RECURSION;
 //factorial
 public class recursion4 {
     public static int calculateFact(int x){

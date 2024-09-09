@@ -1,4 +1,4 @@
-package DSA.BACKTRACKING;
+package BACKTRACKING;
 import java.util.*;
 
 public class NQUEEN {

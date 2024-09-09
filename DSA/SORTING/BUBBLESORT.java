@@ -1,4 +1,4 @@
-package DSA.SORTING;
+package SORTING;
 import java.util.*;
 // to sort the array in ascending order n,n-1...1
 public class BUBBLESORT {

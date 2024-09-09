@@ -1,4 +1,4 @@
-package DSA.RECURSION;
+package RECURSION;
 // 1 to 5
 public class recursion2 {
     public static void printN(int n){
