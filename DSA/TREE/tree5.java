@@ -1,7 +1,6 @@
 package TREE;
 
 public class tree5 {
-//time complexity of O((n)^2)
     static class Node {
         int data;
         Node left;
@@ -41,8 +40,10 @@ public class tree5 {
     }
 
     static int diameter(Node x){
+//time complexity of O((n)^2)
+
         if (x == null) {
-            return 0;
+            return 0; 
         }
 
         int leftNodesDiameter = diameter(x.left);
@@ -56,12 +57,43 @@ public class tree5 {
         return d2;
     }
 
+    static class TreeInfo{
+        int Height ;
+        int Diameter;
+
+        TreeInfo(int x , int y){
+            this.Height = x;
+            this.Diameter = y;
+        }
+
+    }
+
+    static TreeInfo diameter2(Node x){
+// makes time complexity from O((n)^2) to O(n)
+        if (x == null) {
+            return new TreeInfo(0,0);
+        }
+        TreeInfo leftNheight = diameter2(x.left);
+        TreeInfo rightNheight = diameter2(x.right);
+
+        int h = Math.max(leftNheight.Height, rightNheight.Height) + 1;
+
+        int d1 = leftNheight.Diameter;
+        int d2 = rightNheight.Diameter;
+        int d3 = leftNheight.Height + rightNheight.Height + 1;
+
+        int d4 =  Math.max(Math.max(d1, d2), d3);
+
+        return new TreeInfo(h, d4);
+    }
+
     public static void main(String[] args) {
         int  nodes[] = {9,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         Node root = binaryTree.buildtree(nodes);
         // System.out.println(root.data);
         // System.out.println(heightOfNodes(root));
         System.out.println(diameter(root));
+        System.out.println(diameter2(root).Diameter);
 
     }
 }
