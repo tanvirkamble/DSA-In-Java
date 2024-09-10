@@ -1,7 +1,7 @@
 package TREE;
 
 public class tree5 {
-//
+//time complexity of O((n)^2)
     static class Node {
         int data;
         Node left;
