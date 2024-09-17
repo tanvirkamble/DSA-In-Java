@@ -3,8 +3,8 @@ import java.util.*;
 public class Q3_intersectionOf2Arrays {
 
     static int intersection(int a[] , int b[]){
-        HashSet<Integer> set = new HashSet();
-        HashSet<Integer> set2 = new HashSet();
+        HashSet<Integer> set = new HashSet<>();
+        HashSet<Integer> set2 = new HashSet<>();
         int count = 0;
 
         for (int i = 0; i < a.length; i++) {
