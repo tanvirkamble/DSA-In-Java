@@ -32,10 +32,11 @@ public class Q12 {
         return count;
      }
     public static void main(String[] args) {
-        int arr[] = {1,5,7,-1,5};
-        int x = count(arr, 6);
+        // int arr[] = {1,5,7,-1,5};
+        int arr[] ={1,1,1,1};
+        int x = count(arr, 2);
         System.out.println(x);
         int y =count2(arr, x);
-        System.out.println(y);
+        System.out.println(y);// not working
     }
 }
