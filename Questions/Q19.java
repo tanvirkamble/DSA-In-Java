@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Q19 {
     public static List<Integer> spiralOrder(int[][]matrix){
-        int m = matrix.length;
-        int n = matrix[0].length;
+        int m = matrix.length;//r
+        int n = matrix[0].length;//c
         List<Integer> result = new ArrayList<>();
 
         if (m == 0)
