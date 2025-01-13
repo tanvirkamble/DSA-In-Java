@@ -24,4 +24,27 @@ public class rotateArrLeftByK {
 
         return arr;
     }
+        // second approach
+        
+        public static void reverse(ArrayList<Integer> a, int start, int end){
+                while(start <= end){
+                        int temp = a.get(start);
+                        a.set(start, a.get(end));
+                        a.set(end,temp);
+                        start++;
+                        end--;
+                }
+
+        } 
+	public static ArrayList<Integer> rotateArray2(ArrayList<Integer> arr, int k) {
+        // Write your code here.
+        k = k % arr.size();
+        
+        int n = arr.size();
+        reverse(arr, 0, k-1);
+        reverse(arr, k , n-1);
+        reverse(arr, 0, n-1);
+
+        return arr;
+    }
 }
