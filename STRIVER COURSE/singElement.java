@@ -33,5 +33,7 @@ public class singElement {
         }
         return -1;
     }
+
+    //optimal will be w XOR
 }
 
