@@ -23,6 +23,7 @@ public class majorityElement {
         
     }
     //optimal in terms of space
+    //moore voting algo
     
     public static int majorityElement2(int []v) {
         // Write your code here
