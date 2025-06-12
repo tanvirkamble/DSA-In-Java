@@ -46,6 +46,12 @@ public class LinkedList {
         }
         return false;
     }
+
+    public static Node deleteHead(Node head){
+        // Node temp = head;
+        head = head.next;
+        return head;
+    }
      public static void main(String[] args) {
         int arr[] = {1, 2, 3, 4, 5};
         Node x = new Node(arr[3]);
@@ -93,8 +99,13 @@ public class LinkedList {
 
         // System.out.println("Count of nodes: " + count(head));
 
-        System.out.println("Does 3 exist? " + exist(head, 3));
-        System.out.println("Does 6 exist? " + exist(head, 6));
+        // System.out.println("Does 3 exist? " + exist(head, 3));
+        // System.out.println("Does 6 exist? " + exist(head, 6));
+
+        // head = deleteHead(head);        
+        // System.out.println("After deleting head, new head is: " + head.data);
+
+
         
 
      }
