@@ -93,11 +93,34 @@ public class LinkedList {
         temp.next = temp.next.next;
     }
 
+    // Not for deleting tail node
+    public static void deleteTheNode(Node n){
+        if(n == null || n.next == null) return ;
+
+        n.data = n.next.data;
+        n.next = n.next.next;
+    }
+
+    public static void deleteKthPostion2(Node head, int k){
+        Node temp = head;
+        Node prev = null;
+        int count = 0;
+        while(temp != null){
+            count++;
+            prev = temp;
+            temp = temp.next;
+            if(count == k){
+                prev.next = prev.next.next;
+                return;
+            }
+        }
+
+    }
     
      public static void main(String[] args) {
         int arr[] = {1, 2, 3, 4, 5};
-        Node x = new Node(arr[3]);
-        Node y = new Node(arr[2], x);
+        // Node x = new Node(arr[3]);
+        // Node y = new Node(arr[2], x);
 
         // System.out.println(x);
         // System.out.println(x.data);
@@ -156,12 +179,30 @@ public class LinkedList {
         // System.out.println("After:");
         // printLL(head);
 
+        // System.out.println("Before:");
+        // printLL(head);
+        // Node k = head.next.next.next; // This is the 3rd position (0-indexed)
+        // deleteKthPostion(head,k);
+        // System.out.println("After deleting 4th position:");
+        // printLL(head);
+        
+        // Node k = head.next.next.next; 
+        // Node j = head.next.next; 
+        // deleteTheNode(k);
+        // deleteTheNode(j);
+        // System.out.println("After deleting:");
+        // printLL(head);
+
+
         System.out.println("Before:");
         printLL(head);
-        Node k = head.next.next.next; // This is the 3rd position (0-indexed)
-        deleteKthPostion(head,k);
-        System.out.println("After deleting 4th position:");
+        deleteKthPostion2(head, 1); // Deleting the 3rd position (0-indexed)
+        deleteKthPostion2(head, 0); // Deleting the 3rd position (0-indexed)
+        System.out.println("After deleting kth position:");
         printLL(head);
+
+
+        
 
 
      } 
