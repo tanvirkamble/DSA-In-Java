@@ -52,6 +52,25 @@ public class LinkedList {
         head = head.next;
         return head;
     }
+
+    public static void printLL(Node head){
+        // if (head == null) return null;
+        Node temp = head;
+        while (temp != null){
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+
+    public static void deleteTail(Node head){
+        if (head == null || head.next == null) return;
+        Node temp = head ;
+            while (temp.next.next != null){
+                temp = temp.next;
+            }
+            temp.next = null;
+    }
      public static void main(String[] args) {
         int arr[] = {1, 2, 3, 4, 5};
         Node x = new Node(arr[3]);
@@ -105,8 +124,15 @@ public class LinkedList {
         // head = deleteHead(head);        
         // System.out.println("After deleting head, new head is: " + head.data);
 
+        System.out.println("Before:");
+        printLL(head);
+        deleteTail(head);
+        System.out.println("After:");
+        printLL(head);
+        deleteTail(head);
+        System.out.println("After:");
+        printLL(head);
 
-        
 
      }
 } 
