@@ -35,6 +35,17 @@ public class LinkedList {
 
         return count;
     }
+
+    public static boolean exist(Node head, int element) {
+        if(head == null) return false;
+        if(head.data == element ) return true;
+        Node temp = head;
+        while (temp != null ){
+            if(temp.data == element) return true;
+            temp = temp.next;
+        }
+        return false;
+    }
      public static void main(String[] args) {
         int arr[] = {1, 2, 3, 4, 5};
         Node x = new Node(arr[3]);
@@ -79,10 +90,11 @@ public class LinkedList {
             // TL;DR:
             // temp.next doesn’t *create* a chain — it *links* one node to the next.
             // You build the list step-by-step like a chain reaction 🚀
-            
-        Node temp = head;
 
-        System.out.println("Count of nodes: " + count(head));
+        // System.out.println("Count of nodes: " + count(head));
+
+        System.out.println("Does 3 exist? " + exist(head, 3));
+        System.out.println("Does 6 exist? " + exist(head, 6));
         
 
      }
