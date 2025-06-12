@@ -71,6 +71,29 @@ public class LinkedList {
             }
             temp.next = null;
     }
+
+    public static void deleteKthPostion(Node head, Node k){
+        if (head == null || k == null) return;
+        if (head == k) {
+            head = head.next;
+            return;
+        }
+        Node temp = head;
+        if (k.next == null) {
+            // deleteTail(head);
+            while (temp.next.next != null){
+                temp = temp.next;
+            }
+            temp.next = null;
+            return;
+        }
+        while(temp.next != k){
+            temp= temp.next;
+        }
+        temp.next = temp.next.next;
+    }
+
+    
      public static void main(String[] args) {
         int arr[] = {1, 2, 3, 4, 5};
         Node x = new Node(arr[3]);
@@ -124,15 +147,22 @@ public class LinkedList {
         // head = deleteHead(head);        
         // System.out.println("After deleting head, new head is: " + head.data);
 
+        // System.out.println("Before:");
+        // printLL(head);
+        // deleteTail(head);
+        // System.out.println("After:");
+        // printLL(head);
+        // deleteTail(head);
+        // System.out.println("After:");
+        // printLL(head);
+
         System.out.println("Before:");
         printLL(head);
-        deleteTail(head);
-        System.out.println("After:");
-        printLL(head);
-        deleteTail(head);
-        System.out.println("After:");
+        Node k = head.next.next.next; // This is the 3rd position (0-indexed)
+        deleteKthPostion(head,k);
+        System.out.println("After deleting 4th position:");
         printLL(head);
 
 
-     }
+     } 
 } 
