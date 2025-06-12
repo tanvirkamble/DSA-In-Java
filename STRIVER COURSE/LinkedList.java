@@ -24,6 +24,17 @@ public class LinkedList {
         }
         return head;
     }
+
+    private static int count(Node head){
+        int count = 0;
+        Node temp = head;
+        while(temp != null){
+            count++;
+            temp = temp.next;
+        }
+
+        return count;
+    }
      public static void main(String[] args) {
         int arr[] = {1, 2, 3, 4, 5};
         Node x = new Node(arr[3]);
@@ -37,11 +48,42 @@ public class LinkedList {
         Node head = arrayToLL(arr);
         // System.out.println(head.data);
 
+        // Node temp = head;
+        // while (temp != null){
+        //     System.out.println(temp.data);
+        //     temp = temp.next;
+        // }
+
+      // 🔗 How Linked List Nodes Chain Together in Java:
+            //
+            // • Each Node is created like: new Node(data, next)
+            //   → This means: store 'data' and a REFERENCE to the next Node.
+            //
+            // • So temp.next = new Node(3, y) means:
+            //   → temp is linked to a node holding 3,
+            //   → and that node points to another node 'y'.
+            //
+            // • This creates a recursive, nested structure:
+            //   (1, (2, (3, (4, (5, null)))))
+            //
+            // • Visually, it's like a chain:
+            //   head → [1] → [2] → [3] → [4] → [5] → null
+            //
+            // • At every step:
+            //   currentNode.data = value
+            //   currentNode.next = reference to the next node (or null)
+            //
+            // • Java uses *references*, not pointers — but they behave similarly:
+            //   You don't need to manually allocate memory or handle addresses.
+            //
+            // TL;DR:
+            // temp.next doesn’t *create* a chain — it *links* one node to the next.
+            // You build the list step-by-step like a chain reaction 🚀
+            
         Node temp = head;
-        while (temp != null){
-            System.out.println(temp.data);
-            temp = temp.next;
-        }
+
+        System.out.println("Count of nodes: " + count(head));
+        
 
      }
 } 
