@@ -101,20 +101,26 @@ public class LinkedList {
         n.next = n.next.next;
     }
 
-    public static void deleteKthPostion2(Node head, int k){
+        public static Node deleteKthPostion2(Node head, int k){
         Node temp = head;
         Node prev = null;
         int count = 0;
+
         while(temp != null){
+            if(count == k){
+                if (prev == null) {
+                    System.out.println("deleting head");
+                    return head.next;  // return new head
+                } else {
+                    prev.next = temp.next;
+                    return head; // head remains same
+                }
+            }
             count++;
             prev = temp;
             temp = temp.next;
-            if(count == k){
-                prev.next = prev.next.next;
-                return;
-            }
         }
-
+        return head; // If k is invalid
     }
     
      public static void main(String[] args) {
@@ -196,10 +202,22 @@ public class LinkedList {
 
         System.out.println("Before:");
         printLL(head);
-        deleteKthPostion2(head, 1); // Deleting the 3rd position (0-indexed)
-        deleteKthPostion2(head, 0); // Deleting the 3rd position (0-indexed)
+
+        head = deleteKthPostion2(head, 3);
         System.out.println("After deleting kth position:");
         printLL(head);
+
+        head = deleteKthPostion2(head, 1);
+        System.out.println("After deleting kth position:");
+        printLL(head);
+
+        head = deleteKthPostion2(head, 0); // HEAD DELETE
+        System.out.println("After deleting kth position:");
+        printLL(head);
+        head = deleteKthPostion2(head, 1); // Tail DELETE
+        System.out.println("After deleting kth position:");
+        printLL(head);
+
 
 
         
