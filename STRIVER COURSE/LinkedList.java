@@ -178,6 +178,29 @@ public class LinkedList {
         return head;
     }
 
+    public static Node insertKthPostion(Node head, int e, int k){
+        Node newNode = new Node(e);
+        Node temp = head;
+        int count = 0 ;   
+        if(k == 1 ){
+            newNode.next = temp;
+            head = newNode;
+            return head;
+        }
+        while(temp != null){
+            count++;
+            if(count == k-1){
+                newNode.next = temp.next;
+                temp.next = newNode;
+                break;
+            }
+            temp = temp.next;
+        } 
+
+        
+
+        return head;
+    }
 
     
      public static void main(String[] args) {
@@ -300,10 +323,15 @@ public class LinkedList {
         // Node n = new Node(100);
         // Node h = insertTail(head, n);
         // printLL(h);
-        Node h = insertTail(head, 100);
-        printLL(h);
-
+        // Node h = insertTail(head, 100);
+        // printLL(h);
         
+        Node h2 = insertKthPostion(head, 100, 1);
+        printLL(h2);
+        Node h1 = insertKthPostion(h2, 200, 4);
+        printLL(h1);
+        Node h3 = insertKthPostion(h2, 300, 8);
+        printLL(h3);
 
 
      } 
