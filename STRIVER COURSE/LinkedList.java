@@ -197,11 +197,43 @@ public class LinkedList {
             temp = temp.next;
         } 
 
-        
-
         return head;
     }
-
+    
+    public static Node insertBeforeVal(Node head, int val, int e){
+        Node temp = head;
+        Node newNode = new Node(e);
+        if(head.data == val){
+            newNode.next = temp; 
+            head = newNode;
+            return head;
+        }
+        
+        while(temp != null){
+            if(temp.next.data == val){
+                newNode.next = temp.next;
+                temp.next = newNode;
+                return head;
+            }
+            temp = temp.next;
+        }
+        
+        return head;
+    }
+    
+    public static Node insertAfterVal(Node head, int val, int e){
+        Node temp = head;
+        Node newNode = new Node(e);
+        while(temp != null){
+            if(temp.data == val){
+                newNode.next = temp.next;
+                temp.next = newNode;
+                return head;
+            }
+            temp = temp.next;
+        }
+        return head;
+    }
     
      public static void main(String[] args) {
         int arr[] = {1, 2, 3, 4, 5};
@@ -326,13 +358,26 @@ public class LinkedList {
         // Node h = insertTail(head, 100);
         // printLL(h);
         
-        Node h2 = insertKthPostion(head, 100, 1);
-        printLL(h2);
-        Node h1 = insertKthPostion(h2, 200, 4);
-        printLL(h1);
-        Node h3 = insertKthPostion(h2, 300, 8);
-        printLL(h3);
+        // Node h2 = insertKthPostion(head, 100, 1);
+        // printLL(h2);
+        // Node h1 = insertKthPostion(h2, 200, 4);
+        // printLL(h1);
+        // Node h3 = insertKthPostion(h2, 300, 8);
+        // printLL(h3);
 
+        // Node h1 = insertBeforeVal(head, 1, 0);
+        // printLL(h1);
+        // Node h2 = insertBeforeVal(head, 3, 0);
+        // printLL(h2);
+        // Node h3 = insertBeforeVal(head, 5, 0);
+        // printLL(h3);
+
+        Node h1 = insertAfterVal(head, 1, 0);
+        printLL(h1);
+        Node h2 = insertAfterVal(head, 3, 0);
+        printLL(h2);
+        Node h3 = insertAfterVal(head, 5, 0);
+        printLL(h3);
 
      } 
 } 
