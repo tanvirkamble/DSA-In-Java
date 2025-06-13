@@ -101,7 +101,7 @@ public class LinkedList {
         n.next = n.next.next;
     }
 
-        public static Node deleteKthPostion2(Node head, int k){
+    public static Node deleteKthPostion2(Node head, int k){
         Node temp = head;
         Node prev = null;
         int count = 0;
@@ -121,6 +121,22 @@ public class LinkedList {
             temp = temp.next;
         }
         return head; // If k is invalid
+    }
+
+    public static Node deleteTheNode(Node head, int e){
+        if(head == null) return head;
+        if(head.data == e) return head.next;
+        Node temp = head;
+        Node prev = null;
+        while(temp != null){
+            if(temp.data == e){
+                prev.next = temp.next;
+                break;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+        return head;
     }
     
      public static void main(String[] args) {
@@ -200,21 +216,39 @@ public class LinkedList {
         // printLL(head);
 
 
+        // System.out.println("Before:");
+        // printLL(head);
+
+        // head = deleteKthPostion2(head, 3);
+        // System.out.println("After deleting kth position:");
+        // printLL(head);
+
+        // head = deleteKthPostion2(head, 1);
+        // System.out.println("After deleting kth position:");
+        // printLL(head);
+
+        // head = deleteKthPostion2(head, 0); // HEAD DELETE
+        // System.out.println("After deleting kth position:");
+        // printLL(head);
+        // head = deleteKthPostion2(head, 1); // Tail DELETE
+        // System.out.println("After deleting kth position:");
+        // printLL(head);
+
         System.out.println("Before:");
         printLL(head);
 
-        head = deleteKthPostion2(head, 3);
+        head = deleteTheNode(head, 3);
         System.out.println("After deleting kth position:");
         printLL(head);
 
-        head = deleteKthPostion2(head, 1);
+        head = deleteTheNode(head, 1);
         System.out.println("After deleting kth position:");
         printLL(head);
 
-        head = deleteKthPostion2(head, 0); // HEAD DELETE
+        head = deleteTheNode(head, 2); // HEAD DELETE
         System.out.println("After deleting kth position:");
         printLL(head);
-        head = deleteKthPostion2(head, 1); // Tail DELETE
+        head = deleteTheNode(head, 5); // Tail DELETE
         System.out.println("After deleting kth position:");
         printLL(head);
 
