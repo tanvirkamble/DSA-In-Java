@@ -150,17 +150,35 @@ public class LinkedList {
         return temp;
     }
     public static Node insertTail(Node head, Node e){
+        // Node temp = head;
+        // while(temp != null){
+        //     if(temp.next == null){
+        //         temp.next = e;
+        //         return head;
+        //     }
+        //     temp = temp.next;
+        // }
+        // return head;
+
         Node temp = head;
-        while(temp != null){
-            if(temp.next == null){
-                temp.next = e;
-                e.next = null;
-                return head;
-            }
+        while(temp.next != null){
+            temp = temp.next;
         }
+        temp.next = e;
 
         return head;
     }
+    public static Node insertTail(Node head, int e){
+        Node temp = head;
+        while(temp.next != null){
+            temp = temp.next;
+        }
+        temp.next = new Node(e);
+
+        return head;
+    }
+
+
     
      public static void main(String[] args) {
         int arr[] = {1, 2, 3, 4, 5};
@@ -276,12 +294,14 @@ public class LinkedList {
         // Node h = insertHead(head, n);
         // printLL(h);
 
-        Node h = insertHead(head, 100);
-        printLL(h);
+        // Node h = insertHead(head, 100);
+        // printLL(h);
        
         // Node n = new Node(100);
         // Node h = insertTail(head, n);
         // printLL(h);
+        Node h = insertTail(head, 100);
+        printLL(h);
 
         
 
