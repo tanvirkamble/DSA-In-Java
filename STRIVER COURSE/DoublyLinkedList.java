@@ -160,6 +160,72 @@ private static Node insertAfterTail(Node head, int e){
     return head;
 }
 
+public static Node insertBeforeKthPostion(Node head, int val, int k){
+    Node temp = head;
+    Node newNode = new Node(val);
+
+    if(k == 0){
+        newNode.next = temp;
+        temp.prev = newNode;
+        head = newNode;
+        return head;
+    }
+    
+    int c = 0;
+
+    while(temp != null){
+        if(c == k-1){
+            if(temp.next == null){
+                break;
+            }
+            Node nexNode = temp.next;
+            temp.next = newNode;
+            newNode.prev = temp;
+            newNode.next = nexNode;
+            nexNode.prev = newNode;
+            break;
+        }
+        c++;
+        temp = temp.next;
+    }
+    return head;
+}
+
+private static Node insertAfterKthPostion(Node head, int val, int k){
+
+    Node temp = head;
+    Node newNode = new Node(val);
+    
+    if(k == 0){
+        Node nexNode = temp.next;
+        temp.next = newNode;
+        newNode.prev = temp;
+        newNode.next = nexNode;
+        nexNode.prev = newNode;
+        return head;
+    }
+
+    int c = 0; 
+    while( temp != null){
+        if(c == k){
+            if(temp.next == null){
+                temp.next =  newNode;
+                newNode.prev = temp;
+                break;
+            }
+            Node nextNode = temp.next ;
+            temp.next = newNode;
+            newNode.prev = temp;
+            newNode.next = nextNode;
+            nextNode.prev = newNode;
+            break;
+        }
+        c++;
+        temp = temp.next;
+    }
+    return head;
+}
+
     public static void main(String[] args) {
         int arr[] = {1,2,3,4,5,6};
         Node head = array2DLL(arr);
@@ -181,6 +247,19 @@ private static Node insertAfterTail(Node head, int e){
         // printLL(h);
         // Node h = insertAfterTail(head,100);
         // printLL(h);
+        // Node h = insertBeforeKthPostion(head,100,0);//0 indexed
+        // printLL(h);
+        // Node h = insertBeforeKthPostion(head,100,3);//0 indexed
+        // printLL(h);
+        // Node h = insertBeforeKthPostion(head,100,5);//0 indexed
+        // printLL(h);
+        // Node h = insertAfterKthPostion(head,100,0);//0 indexed
+        // printLL(h);
+        // Node h = insertAfterKthPostion(head,100,6);//0 indexed
+        // printLL(h);
+        Node h = insertAfterKthPostion(head,100,3);//0 indexed
+        printLL(h);
+
 
     }
 }
