@@ -265,7 +265,43 @@ private static Node reverseDLL2(Node head){
 
     return head;
 }
+ public static Node reverseBetween(Node head, int left, int right) {
+        ArrayList<Integer> arr = new ArrayList<>();
+        Node temp = head;
 
+        while(temp != null){
+            arr.add(temp.data);
+            temp = temp.next;
+        }
+
+        left = left - 1;
+        right = right - 1;
+        int subArraySize = right;
+            // System.out.println(" left , right and mid : "+ left + "," + right + " and " + subArraySize );
+
+        for(int i = left ; i <= subArraySize ; i++){
+            if( i <= right ){
+
+            int x = arr.get(i);
+            arr.set(i,arr.get(right));
+            arr.set(right,x);
+            // System.out.println("arr at " + i + " and element " + arr.get(i));
+            // System.out.println("arr at " + right + " and element " + arr.get(right));
+            right--;
+            } 
+        }
+
+        temp = head;
+        int c = 0;
+
+        while(temp != null && c < arr.size()){
+            temp.data = (arr.get(c));
+            c++;
+            temp = temp.next;
+        }
+
+        return head;
+}
     public static void main(String[] args) {
         int arr[] = {1,2,3,4,5,6};
         Node head = array2DLL(arr);
@@ -302,7 +338,9 @@ private static Node reverseDLL2(Node head){
         
         // Node h = reverseDLL(head);
         // printLL(h);
-        Node h = reverseDLL2(head);
+        // Node h = reverseDLL2(head);
+        // printLL(h);
+        Node h = reverseBetween(head , 1 , 4);// in question u pass left and right as '1' based indexed i.e. starting from 1
         printLL(h);
 
     }
