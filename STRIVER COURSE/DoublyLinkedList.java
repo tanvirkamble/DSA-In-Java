@@ -302,6 +302,70 @@ private static Node reverseDLL2(Node head){
 
         return head;
 }
+public static Node reverseBetween2(Node head, int left, int right) {
+        if (head == null || left == right) return head;
+
+        Node dummy = new Node(0);
+        dummy.next = head;// creates a node before head so incase of reversal from we get a node before head for our logic
+
+        Node NodeBeforeLeftStart = dummy;
+        for(int i = 1 ; i < left ; i++){
+            NodeBeforeLeftStart = NodeBeforeLeftStart.next;
+        }
+
+        Node start = NodeBeforeLeftStart.next;
+        Node temp = start;
+
+        for(int i = 1 ; i < right-left + 1 ; i++){
+            Node nextNode = temp.next;
+            temp.next = nextNode.next;
+            nextNode.next = NodeBeforeLeftStart.next;
+            NodeBeforeLeftStart.next = nextNode;
+        }
+
+        /*
+            📌 Dry Run: reverseBetween(head = [1, 2, 3, 4, 5], left = 2, right = 4)
+
+            Goal: Reverse the sublist from position 2 to 4
+            Initial: dummy → 1 → 2 → 3 → 4 → 5
+                                ↑    ↑
+                            NBL  temp & start
+
+            🌀 Iteration 1:
+            - nextNode = temp.next        → 3
+            - temp.next = nextNode.next  → 2 → 4
+            - nextNode.next = NBL.next   → 3 → 2
+            - NBL.next = nextNode        → 1 → 3
+
+            List after Iteration 1:
+            dummy → 1 → 3 → 2 → 4 → 5
+                            ↑    ↑
+                            NBL  temp
+
+            🌀 Iteration 2:
+            - nextNode = temp.next        → 4
+            - temp.next = nextNode.next  → 2 → 5
+            - nextNode.next = NBL.next   → 4 → 3
+            - NBL.next = nextNode        → 1 → 4
+
+            List after Iteration 2:
+            dummy → 1 → 4 → 3 → 2 → 5
+                            ↑         ↑
+                            NBL      temp
+
+            ✅ Final List after reversal:
+            [1, 4, 3, 2, 5]
+
+            📌 Key Pointer Roles:
+            - dummy: helper node before head
+            - NBL (NodeBeforeLeftStart): node at position left-1 (acts as anchor)
+            - start/temp: the node at 'left' (fixed during reversal)
+            - nextNode: node being moved to the front of the reversed part
+        */
+
+
+        return dummy.next;
+    }
     public static void main(String[] args) {
         int arr[] = {1,2,3,4,5,6};
         Node head = array2DLL(arr);
@@ -340,7 +404,9 @@ private static Node reverseDLL2(Node head){
         // printLL(h);
         // Node h = reverseDLL2(head);
         // printLL(h);
-        Node h = reverseBetween(head , 1 , 4);// in question u pass left and right as '1' based indexed i.e. starting from 1
+        // Node h = reverseBetween(head , 1 , 4);// in question u pass left and right as '1' based indexed i.e. starting from 1
+        // printLL(h);
+        Node h = reverseBetween2(head , 1 , 4);// in question u pass left and right as '1' based indexed i.e. starting from 1
         printLL(h);
 
     }
