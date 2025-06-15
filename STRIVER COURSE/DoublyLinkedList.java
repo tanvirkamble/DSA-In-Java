@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Node {
     int data;
     Node next;
@@ -226,6 +228,44 @@ private static Node insertAfterKthPostion(Node head, int val, int k){
     return head;
 }
 
+private static Node reverseDLL(Node head){
+    Node temp = head;
+    Node newHead = null;
+    while(temp != null){
+        Node next = temp.next;
+        temp.next = temp.prev;
+        temp.prev = next;
+
+        newHead = temp; // to keep track of new head which will be the tail
+        temp = next;
+    }
+
+    return newHead;
+}
+
+private static Node reverseDLL2(Node head){
+
+    ArrayList<Integer> arr = new ArrayList<>();
+    Node temp = head;
+
+    while(temp != null){
+        arr.add(temp.data);
+        temp = temp.next;
+    }
+
+    temp = head;
+    int c = arr.size() - 1;
+
+    while(temp != null){
+        temp.data = arr.get(c);
+        c--;
+        temp = temp.next;
+    }
+
+
+    return head;
+}
+
     public static void main(String[] args) {
         int arr[] = {1,2,3,4,5,6};
         Node head = array2DLL(arr);
@@ -257,9 +297,13 @@ private static Node insertAfterKthPostion(Node head, int val, int k){
         // printLL(h);
         // Node h = insertAfterKthPostion(head,100,6);//0 indexed
         // printLL(h);
-        Node h = insertAfterKthPostion(head,100,3);//0 indexed
+        // Node h = insertAfterKthPostion(head,100,3);//0 indexed
+        // printLL(h);
+        
+        // Node h = reverseDLL(head);
+        // printLL(h);
+        Node h = reverseDLL2(head);
         printLL(h);
-
 
     }
 }
